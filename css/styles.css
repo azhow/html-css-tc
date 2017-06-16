@@ -1,0 +1,142 @@
+body {
+    -webkit-animation: bugfix infinite 1s;
+    font-family: monospace, "Comic Sans MS", "Comic Sans";
+    font-size: 20px;
+    padding: 3em;
+    margin: 3em;
+}
+@-webkit-keyframes bugfix { from { padding: 0; } to { padding: 0; } }
+
+/*  111 110 101 100 011 010 001 000
+     0   1   1   0   1   1   1  0   */
+
+input { display: none; position: absolute; top: -1000px; left: -1000px; }
+
+body > label {
+    display: block;
+    float: left;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 5px 12px;
+}
+
+/* Comprimento das linhas */
+body > label:nth-of-type(-n+22) { border-top: 1px solid #000; }
+body > label:nth-of-type(22n+2) { border-left: 1px solid #000; clear: left; }
+body > input:nth-of-type(-n+22) { display: none; }
+
+/* Conteúdo dos blocos antes de serem marcados */
+body > label::before { content: "0"; }
+
+/* Conteúdo dos blocos depois de serem marcados */
+body > input:checked + label::before { content: "1"; }
+/* Cor do bloco marcado */
+body > input:checked + label { background: #afa !important; }
+
+div { clear: both; }
+
+/* A partir daqui é onde a mágica acontece */
+/* Daqui até... */
+/* 24 */
+input:not(:checked) +*+ input +*+ input +*+ *+*+*+*+*+ *+*+*+*+*+ *+*+*+*+*+ *+*+*+ input {
+    display: block;
+}
+/* Cor do bloco a marcar */
+/* 25 */
+input:not(:checked) +*+ input +*+ input +*+ *+*+*+*+*+ *+*+*+*+*+ *+*+*+*+*+ *+*+*+*+ label {
+    background: #fa0;
+}
+
+/* 23 */
+input:checked +*+*+*+*+*+ *+*+*+*+*+ *+*+*+*+*+ *+*+*+*+*+ *+ input {
+    display: block;
+}
+/* Cor do bloco a marcar */
+/* 24 */
+input:checked +*+*+*+*+*+ *+*+*+*+*+ *+*+*+*+*+ *+*+*+*+*+ *+*+ label {
+    background: #fa0;
+}
+
+/* 23 */
+*+*+ input:checked +*+*+*+*+*+ *+*+*+*+*+ *+*+*+*+*+ *+*+*+*+ input {
+    display: block;
+}
+/* Cor do bloco a marcar */
+/* 24 */
+*+*+ input:checked +*+*+*+*+*+ *+*+*+*+*+ *+*+*+*+*+ *+*+*+*+*+ label {
+    background: #fa0;
+}
+
+
+/* 25 */
+input:checked +*+ input:checked +*+ input:checked +*+*+*+*+*+ *+*+*+*+*+ *+*+*+*+*+ *+*+*+*+ input {
+    display: none;
+}
+/* Cor dos blocos não marcados */
+/* 26 */
+input:checked +*+ input:checked +*+ input:checked +*+*+*+*+*+ *+*+*+*+*+ *+*+*+*+*+ *+*+*+*+*+ label {
+    background: #fff;
+}
+
+/* 25 */
+input:not(:checked) +*+ input:not(:checked) +*+ input:not(:checked) +*+*+*+*+*+ *+*+*+*+*+ *+*+*+*+*+
+*+*+*+*+ input {
+    display: none;
+}
+/* Cor dos blocos não marcados */
+/* 26 */
+input:not(:checked) +*+ input:not(:checked) +*+ input:not(:checked) +*+*+*+*+*+ *+*+*+*+*+ *+*+*+*+*+
+*+*+*+*+*+ label {
+    background: #fff;
+}
+/* ... aqui */
+
+/* Cor do bloco no qual tá o TAB */
+input:focus + label {
+    background: #f0f !important;
+}
+
+.hidden { display: none !important; }
+.hidden + label { display: none !important; }
+
+
+/* Mensagens e instrucões, not really importantes */
+#infobox {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 350px;
+}
+
+#messages{
+    list-style-type: none;
+    background: #e60;
+    color: #fff;
+    padding: 13px 2.5em 13px 13px;
+    font-weight: bold;
+    font-family: "Comic Sans MS", "Comic Sans";
+}
+
+#messages li {
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+
+#ready:not(:checked) ~ #messages li:first-child {
+    display: inline;
+}
+#ready:checked ~ #messages li:first-child{
+    display: none;
+}
+
+#ready:checked ~ #messages li:nth-child(2){
+    display: inline;
+}
+input:focus:not(:checked) ~ div #messages li:nth-child(2) {
+    display: none !important;
+}
+
+input:focus:not(:checked) ~ div #messages li:last-child {
+    display: inline;
+}
