@@ -21,9 +21,9 @@ body > label {
 }
 
 /* Comprimento das linhas */
-body > label:nth-of-type(-n+22) { border-top: 1px solid #000; }
-body > label:nth-of-type(22n+2) { border-left: 1px solid #000; clear: left; }
-body > input:nth-of-type(-n+22) { display: none; }
+body > label:nth-of-type(-n+11) { border-top: 1px solid #000; }
+body > label:nth-of-type(11n+2) { border-left: 1px solid #000; clear: left; }
+body > input:nth-of-type(-n+11) { display: none; }
 
 /* Conteúdo dos blocos antes de serem marcados */
 body > label::before { content: "0"; }
@@ -66,7 +66,6 @@ input:checked +*+*+*+*+*+ *+*+*+*+*+ *+*+*+*+*+ *+*+*+*+*+ *+*+ label {
 *+*+ input:checked +*+*+*+*+*+ *+*+*+*+*+ *+*+*+*+*+ *+*+*+*+*+ label {
     background: #fa0;
 }
-
 
 /* 25 */
 input:checked +*+ input:checked +*+ input:checked +*+*+*+*+*+ *+*+*+*+*+ *+*+*+*+*+ *+*+*+*+ input {

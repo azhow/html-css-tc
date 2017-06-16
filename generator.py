@@ -22,7 +22,7 @@ def generate_html(lines, mode="110"):
     c2 = "\"></label>"
 
     for i in range(lines):
-        for i in range(20):
+        for i in range(10):
             if i % 10 == 0:
                 print(cp0 + str(count) + cp1 + cpl0 + str(count) + cpl1, file=fo)
             print(c0 + str(count) + c1 + str(count) + c2, file=fo)
