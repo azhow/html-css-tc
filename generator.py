@@ -43,4 +43,4 @@ def generate_html(lines, mode="110"):
     fo.close()
 
 if __name__ == "__main__":
-    generate_html(100)
+    generate_html(40)
