@@ -1,3 +1,4 @@
+/* Got from: http://eli.fox-epste.in/rule110-full.html */
 body {
     -webkit-animation: bugfix infinite 1s;
     font-family: monospace, "Comic Sans MS", "Comic Sans";
@@ -31,7 +32,7 @@ body > label::before { content: "0"; }
 /* Conteúdo dos blocos depois de serem marcados */
 body > input:checked + label::before { content: "1"; }
 /* Cor do bloco marcado */
-body > input:checked + label { background: #afa !important; }
+body > input:checked + label { background: #0099cc !important; }
 
 div { clear: both; }
 
@@ -44,7 +45,7 @@ input:not(:checked) +*+ input +*+ input +*+ *+*+*+*+*+ *+*+*+*+*+ *+*+*+*+*+ *+*
 /* Cor do bloco a marcar */
 /* 25 */
 input:not(:checked) +*+ input +*+ input +*+ *+*+*+*+*+ *+*+*+*+*+ *+*+*+*+*+ *+*+*+*+ label {
-    background: #fa0;
+    background: #66ccff;
 }
 
 /* 23 */
@@ -54,7 +55,7 @@ input:checked +*+*+*+*+*+ *+*+*+*+*+ *+*+*+*+*+ *+*+*+*+*+ *+ input {
 /* Cor do bloco a marcar */
 /* 24 */
 input:checked +*+*+*+*+*+ *+*+*+*+*+ *+*+*+*+*+ *+*+*+*+*+ *+*+ label {
-    background: #fa0;
+    background: #66ccff;
 }
 
 /* 23 */
@@ -64,7 +65,7 @@ input:checked +*+*+*+*+*+ *+*+*+*+*+ *+*+*+*+*+ *+*+*+*+*+ *+*+ label {
 /* Cor do bloco a marcar */
 /* 24 */
 *+*+ input:checked +*+*+*+*+*+ *+*+*+*+*+ *+*+*+*+*+ *+*+*+*+*+ label {
-    background: #fa0;
+    background: #66ccff;
 }
 
 /* 25 */
@@ -92,7 +93,7 @@ input:not(:checked) +*+ input:not(:checked) +*+ input:not(:checked) +*+*+*+*+*+ 
 
 /* Cor do bloco no qual tá o TAB */
 input:focus + label {
-    background: #f0f !important;
+    background: #b30000 !important;
 }
 
 .hidden { display: none !important; }
@@ -102,14 +103,14 @@ input:focus + label {
 /* Mensagens e instrucões, not really importantes */
 #infobox {
     position: absolute;
-    top: 0;
+    top: 800;
     right: 0;
     width: 350px;
 }
 
 #messages{
     list-style-type: none;
-    background: #e60;
+    background: #00bfff;
     color: #fff;
     padding: 13px 2.5em 13px 13px;
     font-weight: bold;
